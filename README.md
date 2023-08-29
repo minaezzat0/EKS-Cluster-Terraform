@@ -118,24 +118,28 @@ Getting Started
 
     Make sure to specify the vars-auto.tfvars file using the -var-file flag.
 
-    -   Apply the changes to create the EKS cluster:
-            terraform apply -var-file=vars-auto.tfvars
+-   Apply the changes to create the EKS cluster:
 
-        Again, specify the vars-auto.tfvars file using the -var-file flag.
+        terraform apply -var-file=vars-auto.tfvars
 
-        Wait for the provisioning to complete. This might take a while as AWS provisions the resources.
-        Connecting to the EKS Cluster
+    Again, specify the vars-auto.tfvars file using the -var-file flag.
 
-    -  onfigure kubectl to use the newly created EKS cluster:
-            aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
+    Wait for the provisioning to complete. This might take a while as AWS provisions the resources.
+    Connecting to the EKS Cluster
 
-    -   Verify your connection by listing the nodes:
-            kubectl get nodes
+-  configure kubectl to use the newly created EKS cluster:
 
-    When you're finished with the EKS cluster, make sure to clean up the resources to avoid incurring unnecessary costs.
+        aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
 
-    -   Destroy the Terraform resources:
-            terraform destroy -var-file=vars-auto.tfvars
+-   Verify your connection by listing the nodes:
+
+        kubectl get nodes
+
+When you're finished with the EKS cluster, make sure to clean up the resources to avoid incurring unnecessary costs.
+
+-   Destroy the Terraform resources:
+
+        terraform destroy -var-file=vars-auto.tfvars
 
 
 Congratulations! You've successfully created an Amazon EKS cluster with custom configurations using Terraform. This guide covered only the basics; for more advanced configurations and additional features, refer to the official Terraform documentation and AWS documentation.
