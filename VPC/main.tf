@@ -162,7 +162,7 @@ resource "aws_security_group" "allow_tls" {
     content {
       from_port   = egress.value
       to_port     = egress.value
-      protocol    = "tcp"
+      protocol    = -1
       cidr_blocks = [var.egress_cidr_block]
     }
   }
