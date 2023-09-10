@@ -52,15 +52,15 @@ Getting Started
 
     -   Modify vars-auto.tfvars to pass the desired variable values:
 
-            vpc_cidr_block             = "10.0.0.0/16"
-            public_subnets_cidr_block  = ["10.0.1.0/24"]
-            private_subnets_cidr_block = ["10.0.2.0/24"]
-            Azs                        = ["us-east-1a", "us-east-1b"]
-            ingress_ports              = [22]
-            ingress_cidr_block         = "0.0.0.0/0"
-            egress_ports               = [-1]
-            egress_cidr_block          = "0.0.0.0/0"
-            Eks_instance_types         = ["t3.micro"]
+            vpc_cidr_block             = ""
+            public_subnets_cidr_block  = [""]
+            private_subnets_cidr_block = [""]
+            Azs                        = [""]
+            ingress_ports              = []
+            ingress_cidr_block         = ""
+            egress_ports               = []
+            egress_cidr_block          = ""
+            Eks_instance_types         = [""]
             Customize these values according to your networking and node group requirements.
 
 
